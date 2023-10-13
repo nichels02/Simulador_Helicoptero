@@ -18,6 +18,11 @@ public class punto_de_control : MonoBehaviour
         get { return posicion; }
         set { posicion = value; }
     }
+    public GameObject Flecha
+    {
+        get { return flecha; }
+        set { flecha = value; }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +43,7 @@ public class punto_de_control : MonoBehaviour
             if (elControlador.GetComponent<El_controlador>().Posicion == posicion)
             {
                 gameObject.SetActive(false);
+                elControlador.GetComponent<El_controlador>().cambiarElPunto();
             }
         }
     }
